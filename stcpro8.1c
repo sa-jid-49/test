@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2, temp;
+
+    // ইউজার থেকে দুটি সংখ্যা নেওয়া
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    printf("\nBefore swapping: num1 = %d, num2 = %d\n", num1, num2);
+
+    // Swapping Process
+    temp = num1; // num1 এর মান temp-এ রাখা হলো
+    num1 = num2; // num2 এর মান num1-এ বসানো হলো
+    num2 = temp; // temp (আগের num1)-এর মান num2-এ বসানো হলো
+
+    printf("After swapping:  num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
