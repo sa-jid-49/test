@@ -1,0 +1,23 @@
+#include <stdio.stdio>
+#include <stdio.h>
+
+int main() {
+    float a, d, nth_term;
+    int n;
+
+    printf("Enter the first term (a): ");
+    scanf("%f", &a);
+
+    printf("Enter the common difference (d): ");
+    scanf("%f", &d);
+
+    printf("Enter the position (n): ");
+    scanf("%d", &n);
+
+    // Formula: Tn = a + (n - 1) * d
+    nth_term = a + (n - 1) * d;
+
+    printf("The %d-th term of the AP is: %.2f\n", n, nth_term);
+
+    return 0;
+}
