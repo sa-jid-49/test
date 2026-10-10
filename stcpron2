@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    float distance = 300.0;
+    float speed = 80.0;
+    float time;
+
+    // Time = Distance / Speed
+    time = distance / speed;
+
+    printf("Distance: %.2f km\n", distance);
+    printf("Speed: %.2f km/h\n", speed);
+    printf("Time to reach City B: %.2f hours\n", time);
+
+    return 0;
+}
