@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int code, qty;
+    float price = 0, total = 0, discount = 0, finalBill = 0;
+
+    // Item code ebong quantity input neya
+    printf("Enter Item Code (1 to 5): ");
+    scanf("%d", &code);
+    printf("Enter Quantity: ");
+    scanf("%d", &qty);
+
+    // Switch-case diye item er price select kora
+    switch (code) {
+        case 1: price = 200; break; // Burger
+        case 2: price = 450; break; // Pizza
+        case 3: price = 150; break; // Sandwich
+        case 4: price = 300; break; // Pasta
+        case 5: price = 100; break; // Coffee
+        default:
+            printf("Invalid Item Code!\n");
+            return 0;
+    }
+
+    // Total bill ber kora
+    total = price * qty;
+
+    // If-else diye discount calculate kora
+    if (total >= 1000) {
+        discount = total * 0.15; // 15% discount
+    } 
+    else if (total >= 500) {
+        discount = total * 0.10; // 10% discount
+    } 
+    else {
+        discount = 0; // No discount
+    }
+
+    finalBill = total - discount;
+
+    // Output print kora
+    printf("Total Bill: %.2f Tk\n", total);
+    printf("Discount: %.2f Tk\n", discount);
+    printf("Final Payable Bill: %.2f Tk\n", finalBill);
+
+    return 0;
+}
