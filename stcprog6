@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(void) {
+int count = 0;
+float grade;
+float total = 0.0f;
+printf("Enter grades (-1 to finish):\n");
+while (1) {
+printf("Grade %d: ", count + 1);
+scanf("%f", &grade);
+if (grade == -1) {
+break;
+}
+total = total + grade;
+count++;
+}
+if (count > 0) {
+printf("\nTotal grades entered: %d\n", count);
+printf("Average grade: %.2f\n", total / count);
+} else {
+printf("\nNo grades were entered.\n");
+}
+return 0;
+}
