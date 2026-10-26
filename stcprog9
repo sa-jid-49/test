@@ -1,0 +1,68 @@
+#include <stdio.h>
+
+#define R 4
+#define C 4
+
+void printSpiral(int matrix[R][C]) {
+    int top = 0, bottom = R - 1;
+    int left = 0, right = C - 1;
+
+    printf("Spiral Order: ");
+
+    // মূল লুপ যা পুরো ম্যাট্রিক্স কাভার করবে
+    while (top <= bottom && left <= right) {
+        
+        // ১. বাম থেকে ডানে প্রিন্ট (Top row)
+        for (int i = left; i <= right; ++i) {
+            printf("%d ", matrix[top][i]);
+        }
+        top++; // উপরের রো-এর কাজ শেষ, তাই এক ধাপ নিচে নামলাম
+
+        // ২. উপর থেকে নিচে প্রিন্ট (Right column)
+        for (int i = top; i <= bottom; ++i) {
+            printf("%d ", matrix[i][right]);
+        }
+        right--; // ডানদিকের কলামের কাজ শেষ, তাই এক ধাপ বামে সরলাম
+
+        // ৩. ডান থেকে বামে প্রিন্ট (Bottom row)
+        if (top <= bottom) {
+            for (int i = right; i >= left; --i) {
+                printf("%d ", matrix[bottom][i]);
+            }
+            bottom--; // নিচের রো-এর কাজ শেষ, তাই এক ধাপ উপরে উঠলাম
+        }
+
+        // ৪. নিচ থেকে উপরে প্রিন্ট (Left column)
+        if (left <= right) {
+            for (int i = bottom; i >= top; --i) {
+                printf("%d ", matrix[i][left]);
+            }
+            left++; // বামদিকের কলামের কাজ শেষ, তাই এক ধাপ ডানে সরলাম
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    // একটি ৪x৪ ম্যাট্রিক্স ইনপুট
+    int matrix[R][C] = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9,  10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    printf("Original Matrix:\n");
+    for (int i = 0; i < R; i++) {
+        for (int j = 0; j < C; j++) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    // স্পাইরাল প্রিন্ট ফাংশন কল
+    printSpiral(matrix);
+
+    return 0;
+}
