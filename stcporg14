@@ -1,0 +1,14 @@
+#include <stdio.h>
+int readNumber(void)
+{
+int x;
+printf("Enter a number: ");
+scanf("%d", &x);
+return x;
+}
+int main(void)
+{
+int n = readNumber();
+printf("You entered %d\n", n);
+return 0;
+}
